@@ -1,0 +1,19 @@
+version: '3' 
+services: 
+  somapg: 
+    image: postgres:alpine 
+    ports: 
+      - '5432:5432'
+    container_name: 'somapg'
+    restart: always 
+    volumes:
+      - somapg-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: pguser  
+      POSTGRES_PASSWORD: pgpassword
+      
+volumes:
+  somapg-data:      
+  #depois que configurar o docker-compose.yml => rodar no teerminal =>
+#docker-compose up -d (para subir o arquivo)Verificar no docker-vs se esta funcionando
+#Comando => docker container ls -a (tras todos os container que estão na maquina)
